@@ -1,0 +1,110 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Test_Talk_Tutorial_Ch_1\codegen_test.spec.ts >> Test 2 will fail
+- Location: tests\Test_Talk_Tutorial_Ch_1\codegen_test.spec.ts:26:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+```
+
+# Page snapshot
+
+```yaml
+- main [ref=e5]:
+  - generic [ref=e6]:
+    - 'button "Language: English" [ref=e11]':
+      - img [ref=e15]
+      - generic [ref=e17]: en
+    - link "Sign in" [ref=e21]:
+      - img [ref=e25]
+      - generic [ref=e27]: Sign in
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e32]:
+        - img "YouTube" [ref=e33]
+        - generic [ref=e34]: A Google company
+      - generic [ref=e35]:
+        - heading "Before you continue to YouTube" [level=1] [ref=e36]
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - paragraph [ref=e39]:
+              - text: We use
+              - link "cookies (Opens in a new tab)" [ref=e40] [cursor=pointer]:
+                - /url: https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb
+                - text: cookies
+                - generic "(Opens in a new tab)" [ref=e41]:
+                  - img [ref=e42]
+              - text: and data to
+            - list [ref=e44]:
+              - listitem [ref=e45]: Deliver and maintain Google services
+              - listitem [ref=e46]: Track outages and protect against spam, fraud, and abuse
+              - listitem [ref=e47]: Measure audience engagement and site statistics to understand how our services are used and enhance the quality of those services
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: If you choose to “Accept all,” we will also use cookies and data to
+            - list [ref=e50]:
+              - listitem [ref=e51]: Develop and improve new services
+              - listitem [ref=e52]: Deliver and measure the effectiveness of ads
+              - listitem [ref=e53]: Show personalized content, depending on your settings
+              - listitem [ref=e54]: Show personalized ads, depending on your settings
+          - paragraph [ref=e56]: If you choose to “Reject all,” we will not use cookies for these additional purposes.
+          - paragraph [ref=e58]: Non-personalized content and ads are influenced by things like the content you’re currently viewing and your location (ad serving is based on general location). Personalized content and ads can also include things like video recommendations, a customized YouTube homepage, and tailored ads based on past activity, like the videos you watch and the things you search for on YouTube. We also use cookies and data to tailor the experience to be age-appropriate, if relevant.
+          - paragraph [ref=e60]: Select “More options” to see additional information, including details about managing your privacy settings. You can also visit g.co/privacytools at any time.
+      - generic [ref=e62]:
+        - link "More options for personalization settings and cookies" [ref=e65]:
+          - generic [ref=e68]: More options
+        - button "Reject all" [ref=e72]:
+          - generic [ref=e75]: Reject all
+        - button "Accept all" [ref=e79]:
+          - generic [ref=e82]: Accept all
+    - generic [ref=e85]:
+      - link "Privacy" [ref=e88]:
+        - generic [ref=e91]: Privacy
+      - link "Terms" [ref=e94]:
+        - generic [ref=e97]: Terms
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * Author Testers Talk
+  5  |  */
+  6  | test('Codegen test case', { tag: ['@PlaywrightWithJenkins'] }, async ({ page }) => {
+  7  |    await page.goto('https://youtube.com/');
+  8  | 
+  9  |   const acceptButton = page.locator('button:has-text("Accept all")').first();
+  10 |   if (await acceptButton.isVisible().catch(() => false)) {
+  11 |     await acceptButton.click();
+  12 |     await page.waitForLoadState('networkidle');
+  13 |   }
+  14 |   
+  15 |   await page.getByPlaceholder('Search').first().click();
+  16 |   await page.getByPlaceholder('Search').first().fill('playwright by testers talk ');
+  17 |   await page.getByRole('button', { name: 'Search', exact: true }).click();
+  18 |   await page.getByRole('link', { name: 'Playwright by Testers Talk☑️' }).click();
+  19 |   await page.locator('video').click();
+  20 |   await expect(page.getByRole('link', { name: 'Playwright by Testers Talk☑️' })).toBeVisible();
+  21 | });
+  22 | 
+  23 | /**
+  24 |  * Author Testers Talk
+  25 |  */
+  26 | test('Test 2 will fail', { tag: ['@PlaywrightWithJenkins'] }, async ({ page }) => {
+  27 |   await page.goto('https://www.youtube.com/@testerstalk');
+> 28 |   expect(true).toBe(false);
+     |                ^ Error: expect(received).toBe(expected) // Object.is equality
+  29 | });
+```
