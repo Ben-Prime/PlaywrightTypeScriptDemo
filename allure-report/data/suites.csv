@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","10186","Handling Confirm boxes in Playwright","Google Chrome","2026-05-12","passed","2026-05-12","","Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts","",""
+"","10928","Handling Prompts in Playwright","Google Chrome","2026-05-12","passed","2026-05-12","","Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts","",""
+"","10354","Handling Alerts in Playwright","Google Chrome","2026-05-12","passed","2026-05-12","","Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts","",""

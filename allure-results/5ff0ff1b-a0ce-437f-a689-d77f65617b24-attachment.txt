@@ -1,0 +1,13 @@
+Text from 1st for loop is: PlaywrightTutorialFullCourse
+Text from 1st for loop is: PostmanCollectionsByTestersTalk
+Text from 1st for loop is: PlaywrightAPITestingTutorial
+Text from 1st for loop is: RestAssuredAPITestingFramework
+Text from 1st for loop is: PlaywrightTypeScriptTutorialFullCourse
+Text from 1st for loop is: CypressTutorialFullCourse
+-----------------------------
+Text from 2nd for loop is: PlaywrightTutorialFullCourse
+Text from 2nd for loop is: PostmanCollectionsByTestersTalk
+Text from 2nd for loop is: PlaywrightAPITestingTutorial
+Text from 2nd for loop is: RestAssuredAPITestingFramework
+Text from 2nd for loop is: PlaywrightTypeScriptTutorialFullCourse
+Text from 2nd for loop is: CypressTutorialFullCourse
