@@ -9,7 +9,7 @@ test('Codegen test case', { tag: ['@PlaywrightWithJenkins'] }, async ({ page }) 
   const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
 
   await page.getByPlaceholder('Search').first().click();
@@ -29,7 +29,7 @@ test('Test 2 will fail', { tag: ['@PlaywrightWithJenkins'] }, async ({ page }) =
   const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
   expect(true).toBe(false);
 });
