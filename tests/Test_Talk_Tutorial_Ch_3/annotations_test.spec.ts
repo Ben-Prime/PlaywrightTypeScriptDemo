@@ -21,17 +21,17 @@ test.skip('Test 2', async ({page}) => {
 });
 
 // To run only this test
-test.only('Test 3', async ({page}) => {
-    await page.goto('https://jqueryui.com/datepicker/');
+// test.only('Test 3', async ({page}) => {
+//     await page.goto('https://jqueryui.com/datepicker/');
 
-    const iframe =  page.frameLocator('[class="demo-frame"]');
+//     const iframe =  page.frameLocator('[class="demo-frame"]');
 
-    // Selecting a past date
-    await iframe.locator('[id="datepicker"]').click();
-    await iframe.locator('[title="Prev"]').click(); // Go to previous month
-    await iframe.locator('text="15"').click(); // or await iframe.getByText('15').click(); // Click on the 15th day of the previous month
+//     // Selecting a past date
+//     await iframe.locator('[id="datepicker"]').click();
+//     await iframe.locator('[title="Prev"]').click(); // Go to previous month
+//     await iframe.locator('text="15"').click(); // or await iframe.getByText('15').click(); // Click on the 15th day of the previous month
 
-});
+// });
 
 test('Test 4', async ({page}) => {
     await page.goto('https://jqueryui.com/datepicker/');
