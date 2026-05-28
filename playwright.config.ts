@@ -46,7 +46,7 @@ export default defineConfig({
     screenshot: 'on',
     video: 'on',
     headless: true,
-    actionTimeout: 40000,
+    actionTimeout: 30000,
     navigationTimeout: 60000,
     trace: 'on',
   },
