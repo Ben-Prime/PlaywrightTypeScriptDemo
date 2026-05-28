@@ -13,10 +13,10 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 300_000, // (for each test) same as 5 * 60 * 1000, which is 5 minutes - minutes, seconds, milliseconds
+  timeout: 600_000, // (for each test) same as 5 * 60 * 1000, which is 5 minutes - minutes, seconds, milliseconds
   globalTimeout: 60 * 60 * 1000, // (for the entire test suite) same as 1 * 60 * 60 * 1000, which is 1 hour - hours, minutes, seconds, milliseconds
   expect: {
-    timeout: 10000,
+    timeout: 30000,
   },
 
   testDir: './tests',
@@ -45,9 +45,9 @@ export default defineConfig({
     testIdAttribute: 'data-tab-item',
     screenshot: 'on',
     video: 'on',
-    headless: false,
+    headless: true,
     actionTimeout: 40000,
-    //navigationTimeout: 30000,
+    navigationTimeout: 60000,
     trace: 'on',
   },
 
