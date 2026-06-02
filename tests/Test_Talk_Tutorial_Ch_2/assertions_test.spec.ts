@@ -8,7 +8,7 @@ test('Hard Assertions in playwright', async ({ page }) => {
   const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
 
   const searchInput = page.getByPlaceholder('Search', { exact: true }).first();
@@ -36,7 +36,7 @@ test('Soft Assertions in playwright', async ({ page }) => {
   const acceptButton = page.getByRole('button', { name: 'Accept all' }).first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
   const searchInput = page.getByPlaceholder('Search', { exact: true }).first();
   await expect.soft(searchInput).toBeHidden();

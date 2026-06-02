@@ -9,7 +9,7 @@ test('Test 1', async ({ page, browser }) => {
   const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
 
   const searchInput = page.getByPlaceholder('Search', { exact: true }).first();

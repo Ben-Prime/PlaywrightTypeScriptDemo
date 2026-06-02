@@ -39,7 +39,7 @@ test('Locators in playwright: placeholder, xpath, css-selector', async({page})=>
         // If the cookie/consent popup appears, accept it
         if (await acceptButton.isVisible({ timeout: 5000 }).catch(() => false)) {
             await acceptButton.click();
-            await page.waitForLoadState('networkidle');
+            await page.waitForLoadState('domcontentloaded');
         }
 
         //Get by placeholder
@@ -66,7 +66,7 @@ test('Locators in playwright: title', async({page})=>{
         // If the cookie/consent popup appears, accept it
         if (await acceptButton.isVisible({ timeout: 5000 }).catch(() => false)) {
             await acceptButton.click();
-            await page.waitForLoadState('networkidle');
+            await page.waitForLoadState('domcontentloaded');
         }
 
         //Get by title

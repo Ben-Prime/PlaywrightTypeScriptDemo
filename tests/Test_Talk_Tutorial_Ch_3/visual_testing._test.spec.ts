@@ -4,7 +4,7 @@ test('Page Visual Comparison in Playwright', async ({ page }) => {
     test.slow();
 
     await page.goto('https://github.com/login');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     await expect(page).toHaveScreenshot('GitHubLoginPage.png', { fullPage: true });
     await page.locator('#login_field').fill('testuser');

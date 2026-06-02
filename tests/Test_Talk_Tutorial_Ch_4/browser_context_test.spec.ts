@@ -7,7 +7,7 @@ test('Multiple browsers/tabs in Playwright Typescript', async ({ page, browser }
   const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   }
 
   const searchInput = page.getByPlaceholder('Search', { exact: true }).first();
@@ -25,7 +25,7 @@ test('Multiple browsers/tabs in Playwright Typescript', async ({ page, browser }
   const acceptButton2 = newPage.locator('button:has-text("Accept all")').first();
   if (await acceptButton2.isVisible().catch(() => false)) {
     await acceptButton2.click();
-    await newPage.waitForLoadState('networkidle');
+    await newPage.waitForLoadState('domcontentloaded');
   }
 
   const searchInput2 = newPage.getByPlaceholder('Search', { exact: true }).first();

@@ -22,7 +22,7 @@ test('Test 2', async ({ page }) => {
     // If the cookie/consent popup appears, accept it
     if (await acceptButton.isVisible({ timeout: 5000 }).catch(() => false)) {
         await acceptButton.click();
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
     }
 
     await page.getByRole('combobox', { name: 'Search' }).click({timeout: 10000}); // overrides the default timeout for this action to 15 seconds

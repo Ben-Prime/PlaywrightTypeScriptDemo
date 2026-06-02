@@ -11,7 +11,7 @@ test('Capture screenshots in playwright', async ({ page }) => {
         // If the cookie/consent popup appears, accept it
         if (await acceptButton.isVisible({ timeout: 5000 }).catch(() => false)) {
             await acceptButton.click();
-            await page.waitForLoadState('networkidle');
+            await page.waitForLoadState('domcontentloaded');
         }
     });
 
