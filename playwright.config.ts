@@ -20,23 +20,28 @@ export default defineConfig({
   },
 
   testDir: './tests',
+  testMatch: '/*.spec.ts', // Defines a pattern to match test files. In this case, it will match any TypeScript files in the tests directory that end with .spec.ts.
+  testIgnore: '/*.unit.ts', // Defines a pattern to ignore test files. In this case, it will ignore any TypeScript files in the tests directory that end with .unit.ts.
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   //forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  //retries: process.env.CI ? 2 : 0,
+  /* Retry */
+  retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
-  //workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  /* Sets a global threshold for how many test failures are allowed before Playwright
+  stops the entire test run to 10*/
+  maxFailures: 10,
   reporter: [
-            ['html'],
-            //['dot'], 
-            ['list'], 
-            ['json', { outputFile: 'playwright-report/test-results.json' }],
-            ['allure-playwright', { outputFolder: 'allure-results' }],
-            ['junit', { outputFile: 'playwright-report/test-results.xml' }],
-          ],
+    ['html', {open: 'never'}], // Prevents the HTML report from automatically opening which causes issues in CI environments. You can change 'never' to 'on-failure' if you want the report to open only when tests fail.
+    //['dot'], 
+    ['list'],
+    ['json', { outputFile: 'playwright-report/test-results.json' }],
+    ['allure-playwright', { outputFolder: 'allure-results' }],
+    ['junit', { outputFile: 'playwright-report/test-results.xml' }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -49,6 +54,8 @@ export default defineConfig({
     actionTimeout: 30000,
     navigationTimeout: 60000,
     trace: 'on',
+    locale: 'en-NG', // Set the locale to English (Nigeria)
+    timezoneId: 'Africa/Lagos', // Set the timezone to Lagos, Nigeria
   },
 
   /* Configure projects for major browsers */

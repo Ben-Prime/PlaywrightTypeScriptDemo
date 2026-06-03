@@ -1,0 +1,1058 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Test_Talk_Tutorial_Ch_5\data_driven_testing_using_EXCEL_test.spec.ts >> Data driven testing using JSON in Playwright: Cypress by Testers Talk
+- Location: tests\Test_Talk_Tutorial_Ch_5\data_driven_testing_using_EXCEL_test.spec.ts:11:9
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByText('Cypress by Testers Talk ✅').first()
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Guide" [active] [ref=e9] [cursor=pointer]:
+            - generic [ref=e12]:
+              - img
+          - generic [ref=e13]:
+            - link "YouTube Home" [ref=e14] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e19]:
+                - img
+            - generic [ref=e20]: NG
+          - button "Skip navigation" [ref=e24] [cursor=pointer]:
+            - generic [ref=e25]: Skip navigation
+        - generic [ref=e29]:
+          - search [ref=e30]:
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - combobox "Search" [expanded] [ref=e34]: Cypress by Testers Talk
+                - button "Clear search query" [ref=e36] [cursor=pointer]:
+                  - generic [ref=e39]:
+                    - img
+              - button "Search" [ref=e43] [cursor=pointer]:
+                - generic [ref=e46]:
+                  - img
+          - generic [ref=e48]:
+            - button "Search with your voice" [ref=e50] [cursor=pointer]:
+              - generic [ref=e54]:
+                - img
+            - tooltip "tooltip"
+        - generic [ref=e59]:
+          - button "Settings" [ref=e64] [cursor=pointer]:
+            - generic [ref=e67]:
+              - img
+          - link "Sign in" [ref=e70] [cursor=pointer]:
+            - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fresults%253Fsearch_query%253DCypress%252Bby%252BTesters%252BTalk&hl=en&ec=65620
+            - generic [ref=e74]:
+              - img
+            - generic [ref=e75]: Sign in
+    - navigation [ref=e79]:
+      - generic [ref=e80]:
+        - link "Home" [ref=e82] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e85]:
+            - img
+          - generic [ref=e86]: Home
+        - link "Shorts" [ref=e88] [cursor=pointer]:
+          - /url: /shorts/
+          - generic [ref=e91]:
+            - img
+          - generic [ref=e92]: Shorts
+        - link "Subscriptions" [ref=e94] [cursor=pointer]:
+          - /url: /feed/subscriptions
+          - generic [ref=e97]:
+            - img
+          - generic [ref=e98]: Subscriptions
+        - link "You" [ref=e100] [cursor=pointer]:
+          - /url: /feed/you
+          - generic [ref=e103]:
+            - img
+          - generic [ref=e104]: You
+    - generic [ref=e105]:
+      - text: •
+      - main [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e109]:
+            - tablist [ref=e114]:
+              - tab "All" [selected] [ref=e118] [cursor=pointer]:
+                - generic [ref=e120]: All
+              - tab "Shorts" [ref=e127] [cursor=pointer]:
+                - generic [ref=e129]: Shorts
+              - tab "Unwatched" [ref=e136] [cursor=pointer]:
+                - generic [ref=e138]: Unwatched
+              - tab "Watched" [ref=e145] [cursor=pointer]:
+                - generic [ref=e147]: Watched
+              - tab "Videos" [ref=e154] [cursor=pointer]:
+                - generic [ref=e156]: Videos
+              - tab "Recently uploaded" [ref=e163] [cursor=pointer]:
+                - generic [ref=e165]: Recently uploaded
+              - tab "Live" [ref=e172] [cursor=pointer]:
+                - generic [ref=e174]: Live
+            - generic [ref=e179]:
+              - button "Search filters" [ref=e181] [cursor=pointer]:
+                - generic [ref=e182]: Filters
+                - generic [ref=e186]:
+                  - img
+              - tooltip "tooltip"
+          - generic [ref=e195]:
+            - generic [ref=e204] [cursor=pointer]:
+              - link [ref=e205]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiVU8_tYeauC6EdLr9fgP1M6TwQff5bKnhwHe-Y-5nxVkEAEgAGC3vIOF9DCCARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB6JnQ0gOoAwSqBLACT9C6ijt8NqN1wWMIuVIHy2hDlYwUNYidHBu-zpGQ2QCyCs7_rDdYUpEjE1a-1v1MEvqRax1yCjq-0Px6I_AmNxXdbiK0KRmlpnVJasnx49-JkTJ7oBvkxhxka0St9o9iEn10_sJJY540_l3wfM5tTNRiHxdpdOItHiPcaibeWwQpT8wk0cxKaamtvG1wnacLg3lfXdMtANMh6MaPvk4yfLWDEhipcdlXZyzTLLS36P_Spi_70vvxcIsdiG2FhWL4iM55goI9WW3WsTJXz9iSqEqbpNmWcjVaFBYbi9OSBV1CmvYz0q-JhASy_FDuXCzGUh85HCZ40vWRUC8lSddYOf3ZEUZFKYb0s5c4EePTZy1hEOjN9DlV-CajBpffH8defu5gG6qD4fXtRMkbr0k_bYgF3rv2m1eSBQwIEjDWkqHPwou_pXCSBQcIE3iozZMuoAZVgAeA5q8tkAcEqAfywLECqAe4xLECqAfhtrECqAelz7ECqAfnnbECqAfonbECqAfvtbECqAfwtbECqAf507ECqAfJ2rECqAep4LECqAeECKgHptSxAqgHqNIbqAe2B6gHsdwbqAewm7ECqAeusbECqAf9srECqAfIz7ECqAfJz7ECqAfNx7ECqAfx0bECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAed17ECqAed1LECqAeBxhuoB_yvsQKoB9XOG6gHvtmxAqgHq8UbqAeVCKgHnNwbqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbECkggLY0VyOFhDbm9TVlmoCAHSCDQIgEEQARheMgKCAjoVgMKAgICAgAaAwICAgICAgAKqgIAQSNmg0jVQFFjgoaag0eiUA2ABmgkbaHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tsQnvx5f1GYvcg8gJF8gJjwHICZAByAnCAboLPQgDEAUYFiAHKAEwHEABSABYfWAAaABwAYgBAJgBAaIBCAoAqAIC2AICqAEB2AEGgAIBiAIJugMFdmlicnXQCxLgCwHSDAIQAdoMJgoLEIC-68uEldGDpwESAgEDGg0Y3rv2m1cg6PHP29wFQAFKAhAfmg0BEqoNAk5HyA0B0g2qA2h0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L3NlYXJjaGFkcy9saW5rL2NsaWNrP2xpZD01ODcwMDAwODk5MTQyODE2MSZkc19hX2NpZD05Njc5MDE4NCZkc19hX2NhaWQ9MjM0MTc0NzgyMDYmZHNfYV9hZ2lkPSZkc19hX2ZpaWQ9JmRzX2FfbGlkPSZkc19hX2V4dGlkPSYmZHNfZV9hZGlkPSZkc19lX21hdGNodHlwZT0mZHNfZV9kZXZpY2U9YyZkc19lX25ldHdvcms9eCYmZHNfdXJsX3Y9MiZkc19kZXN0X3VybD1odHRwczovL2ZpcmViYXNlLmdvb2dsZS5jb20_dXRtX3NvdXJjZT1QTUFYJnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY2FtcGFpZ249Q2xvdWQtU1MtRFItRmlyZWJhc2UtRlkyNi1nbG9iYWwtcG1heC0xNzEzNTkwJnV0bV9jb250ZW50PXBtYXgmZ2Nsc3JjPWF3LmRzJmdhZF9zb3VyY2U9MiZnYWRfY2FtcGFpZ25pZD0yMzQxMjQ0ODczNLAOvtXi5Bi4E____________wGIFAGwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI4LGmoNHolAMV0nUdCR1U5yR4EAEYASAAEgJqBvD_BwE&num=1&cid=CAASqwHkaPbc9gsfYFu1aNaxbflT68LppQ83OcedSML7gIET8BsvtWgsMhQiWuuTjff2-NVvjXnICoSzkyK9nwDObRk1hvktfimbyA1h_6YYlF4zJeqxwPZSsbApu3fhyrWzh7hMFGKky12tjTY-nSqSt-YyYa1nQc3oMyuD9og9I-GgmlWqdF_WSgdx1o_tQFLH8fXKWlucHyNgN0Ls08oggTqInYJvSyKawciUE78&ad_cpn=%5BCPN%5D&sig=AOD64_1H75Q-To8Qv9fJ8tR6ep6NbeFXCQ&ctype=110&video_id=cEr8XCnoSVY&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                - button [ref=e210]:
+                  - generic [ref=e214]:
+                    - img
+              - generic [ref=e218]:
+                - generic [ref=e219]:
+                  - generic [ref=e220]:
+                    - link "Build AI-Powered Experiences into your Apps with Speed, Quality and Safety." [ref=e223]:
+                      - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiVU8_tYeauC6EdLr9fgP1M6TwQff5bKnhwHe-Y-5nxVkEAEgAGC3vIOF9DCCARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB6JnQ0gOoAwSqBLACT9C6ijt8NqN1wWMIuVIHy2hDlYwUNYidHBu-zpGQ2QCyCs7_rDdYUpEjE1a-1v1MEvqRax1yCjq-0Px6I_AmNxXdbiK0KRmlpnVJasnx49-JkTJ7oBvkxhxka0St9o9iEn10_sJJY540_l3wfM5tTNRiHxdpdOItHiPcaibeWwQpT8wk0cxKaamtvG1wnacLg3lfXdMtANMh6MaPvk4yfLWDEhipcdlXZyzTLLS36P_Spi_70vvxcIsdiG2FhWL4iM55goI9WW3WsTJXz9iSqEqbpNmWcjVaFBYbi9OSBV1CmvYz0q-JhASy_FDuXCzGUh85HCZ40vWRUC8lSddYOf3ZEUZFKYb0s5c4EePTZy1hEOjN9DlV-CajBpffH8defu5gG6qD4fXtRMkbr0k_bYgF3rv2m1eSBQwIEjDWkqHPwou_pXCSBQcIE3iozZMuoAZVgAeA5q8tkAcEqAfywLECqAe4xLECqAfhtrECqAelz7ECqAfnnbECqAfonbECqAfvtbECqAfwtbECqAf507ECqAfJ2rECqAep4LECqAeECKgHptSxAqgHqNIbqAe2B6gHsdwbqAewm7ECqAeusbECqAf9srECqAfIz7ECqAfJz7ECqAfNx7ECqAfx0bECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAed17ECqAed1LECqAeBxhuoB_yvsQKoB9XOG6gHvtmxAqgHq8UbqAeVCKgHnNwbqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbECkggLY0VyOFhDbm9TVlmoCAHSCDQIgEEQARheMgKCAjoVgMKAgICAgAaAwICAgICAgAKqgIAQSNmg0jVQFFjgoaag0eiUA2ABmgkbaHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tsQnvx5f1GYvcg8gJF8gJjwHICZAByAnCAboLPQgDEAUYFiAHKAEwHEABSABYfWAAaABwAYgBAJgBAaIBCAoAqAIC2AICqAEB2AEGgAIBiAIJugMFdmlicnXQCxLgCwHSDAIQAdoMJgoLEIC-68uEldGDpwESAgEDGg0Y3rv2m1cg6PHP29wFQAFKAhAfmg0BEqoNAk5HyA0B0g2qA2h0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L3NlYXJjaGFkcy9saW5rL2NsaWNrP2xpZD01ODcwMDAwODk5MTQyODE2MSZkc19hX2NpZD05Njc5MDE4NCZkc19hX2NhaWQ9MjM0MTc0NzgyMDYmZHNfYV9hZ2lkPSZkc19hX2ZpaWQ9JmRzX2FfbGlkPSZkc19hX2V4dGlkPSYmZHNfZV9hZGlkPSZkc19lX21hdGNodHlwZT0mZHNfZV9kZXZpY2U9YyZkc19lX25ldHdvcms9eCYmZHNfdXJsX3Y9MiZkc19kZXN0X3VybD1odHRwczovL2ZpcmViYXNlLmdvb2dsZS5jb20_dXRtX3NvdXJjZT1QTUFYJnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY2FtcGFpZ249Q2xvdWQtU1MtRFItRmlyZWJhc2UtRlkyNi1nbG9iYWwtcG1heC0xNzEzNTkwJnV0bV9jb250ZW50PXBtYXgmZ2Nsc3JjPWF3LmRzJmdhZF9zb3VyY2U9MiZnYWRfY2FtcGFpZ25pZD0yMzQxMjQ0ODczNLAOvtXi5Bi4E____________wGIFAGwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI4LGmoNHolAMV0nUdCR1U5yR4EAEYASAAEgJqBvD_BwE&num=1&cid=CAASqwHkaPbc9gsfYFu1aNaxbflT68LppQ83OcedSML7gIET8BsvtWgsMhQiWuuTjff2-NVvjXnICoSzkyK9nwDObRk1hvktfimbyA1h_6YYlF4zJeqxwPZSsbApu3fhyrWzh7hMFGKky12tjTY-nSqSt-YyYa1nQc3oMyuD9og9I-GgmlWqdF_WSgdx1o_tQFLH8fXKWlucHyNgN0Ls08oggTqInYJvSyKawciUE78&ad_cpn=%5BCPN%5D&sig=AOD64_1H75Q-To8Qv9fJ8tR6ep6NbeFXCQ&ctype=110&video_id=cEr8XCnoSVY&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                    - link "Easily build AI-powered features that help you grow apps users love." [ref=e226]:
+                      - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiVU8_tYeauC6EdLr9fgP1M6TwQff5bKnhwHe-Y-5nxVkEAEgAGC3vIOF9DCCARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB6JnQ0gOoAwSqBLACT9C6ijt8NqN1wWMIuVIHy2hDlYwUNYidHBu-zpGQ2QCyCs7_rDdYUpEjE1a-1v1MEvqRax1yCjq-0Px6I_AmNxXdbiK0KRmlpnVJasnx49-JkTJ7oBvkxhxka0St9o9iEn10_sJJY540_l3wfM5tTNRiHxdpdOItHiPcaibeWwQpT8wk0cxKaamtvG1wnacLg3lfXdMtANMh6MaPvk4yfLWDEhipcdlXZyzTLLS36P_Spi_70vvxcIsdiG2FhWL4iM55goI9WW3WsTJXz9iSqEqbpNmWcjVaFBYbi9OSBV1CmvYz0q-JhASy_FDuXCzGUh85HCZ40vWRUC8lSddYOf3ZEUZFKYb0s5c4EePTZy1hEOjN9DlV-CajBpffH8defu5gG6qD4fXtRMkbr0k_bYgF3rv2m1eSBQwIEjDWkqHPwou_pXCSBQcIE3iozZMuoAZVgAeA5q8tkAcEqAfywLECqAe4xLECqAfhtrECqAelz7ECqAfnnbECqAfonbECqAfvtbECqAfwtbECqAf507ECqAfJ2rECqAep4LECqAeECKgHptSxAqgHqNIbqAe2B6gHsdwbqAewm7ECqAeusbECqAf9srECqAfIz7ECqAfJz7ECqAfNx7ECqAfx0bECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAed17ECqAed1LECqAeBxhuoB_yvsQKoB9XOG6gHvtmxAqgHq8UbqAeVCKgHnNwbqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbECkggLY0VyOFhDbm9TVlmoCAHSCDQIgEEQARheMgKCAjoVgMKAgICAgAaAwICAgICAgAKqgIAQSNmg0jVQFFjgoaag0eiUA2ABmgkbaHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tsQnvx5f1GYvcg8gJF8gJjwHICZAByAnCAboLPQgDEAUYFiAHKAEwHEABSABYfWAAaABwAYgBAJgBAaIBCAoAqAIC2AICqAEB2AEGgAIBiAIJugMFdmlicnXQCxLgCwHSDAIQAdoMJgoLEIC-68uEldGDpwESAgEDGg0Y3rv2m1cg6PHP29wFQAFKAhAfmg0BEqoNAk5HyA0B0g2qA2h0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L3NlYXJjaGFkcy9saW5rL2NsaWNrP2xpZD01ODcwMDAwODk5MTQyODE2MSZkc19hX2NpZD05Njc5MDE4NCZkc19hX2NhaWQ9MjM0MTc0NzgyMDYmZHNfYV9hZ2lkPSZkc19hX2ZpaWQ9JmRzX2FfbGlkPSZkc19hX2V4dGlkPSYmZHNfZV9hZGlkPSZkc19lX21hdGNodHlwZT0mZHNfZV9kZXZpY2U9YyZkc19lX25ldHdvcms9eCYmZHNfdXJsX3Y9MiZkc19kZXN0X3VybD1odHRwczovL2ZpcmViYXNlLmdvb2dsZS5jb20_dXRtX3NvdXJjZT1QTUFYJnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY2FtcGFpZ249Q2xvdWQtU1MtRFItRmlyZWJhc2UtRlkyNi1nbG9iYWwtcG1heC0xNzEzNTkwJnV0bV9jb250ZW50PXBtYXgmZ2Nsc3JjPWF3LmRzJmdhZF9zb3VyY2U9MiZnYWRfY2FtcGFpZ25pZD0yMzQxMjQ0ODczNLAOvtXi5Bi4E____________wGIFAGwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI4LGmoNHolAMV0nUdCR1U5yR4EAEYASAAEgJqBvD_BwE&num=1&cid=CAASqwHkaPbc9gsfYFu1aNaxbflT68LppQ83OcedSML7gIET8BsvtWgsMhQiWuuTjff2-NVvjXnICoSzkyK9nwDObRk1hvktfimbyA1h_6YYlF4zJeqxwPZSsbApu3fhyrWzh7hMFGKky12tjTY-nSqSt-YyYa1nQc3oMyuD9og9I-GgmlWqdF_WSgdx1o_tQFLH8fXKWlucHyNgN0Ls08oggTqInYJvSyKawciUE78&ad_cpn=%5BCPN%5D&sig=AOD64_1H75Q-To8Qv9fJ8tR6ep6NbeFXCQ&ctype=110&video_id=cEr8XCnoSVY&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                    - generic [ref=e227]:
+                      - button "Firebase" [ref=e231]
+                      - generic [ref=e235]:
+                        - generic [ref=e236]: Sponsored
+                        - text: ·
+                      - generic [ref=e238]: Firebase
+                  - button "My Ad Center" [ref=e241]:
+                    - generic [ref=e245]:
+                      - img
+                - generic [ref=e251]:
+                  - link "Watch" [ref=e254]:
+                    - /url: /watch?v=cEr8XCnoSVY
+                    - generic [ref=e255]: Watch
+                  - link "Sign up" [ref=e261]:
+                    - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiVU8_tYeauC6EdLr9fgP1M6TwQff5bKnhwHe-Y-5nxVkEAEgAGC3vIOF9DCCARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB6JnQ0gOoAwSqBLACT9C6ijt8NqN1wWMIuVIHy2hDlYwUNYidHBu-zpGQ2QCyCs7_rDdYUpEjE1a-1v1MEvqRax1yCjq-0Px6I_AmNxXdbiK0KRmlpnVJasnx49-JkTJ7oBvkxhxka0St9o9iEn10_sJJY540_l3wfM5tTNRiHxdpdOItHiPcaibeWwQpT8wk0cxKaamtvG1wnacLg3lfXdMtANMh6MaPvk4yfLWDEhipcdlXZyzTLLS36P_Spi_70vvxcIsdiG2FhWL4iM55goI9WW3WsTJXz9iSqEqbpNmWcjVaFBYbi9OSBV1CmvYz0q-JhASy_FDuXCzGUh85HCZ40vWRUC8lSddYOf3ZEUZFKYb0s5c4EePTZy1hEOjN9DlV-CajBpffH8defu5gG6qD4fXtRMkbr0k_bYgF3rv2m1eSBQwIEjDWkqHPwou_pXCSBQcIE3iozZMuoAZVgAeA5q8tkAcEqAfywLECqAe4xLECqAfhtrECqAelz7ECqAfnnbECqAfonbECqAfvtbECqAfwtbECqAf507ECqAfJ2rECqAep4LECqAeECKgHptSxAqgHqNIbqAe2B6gHsdwbqAewm7ECqAeusbECqAf9srECqAfIz7ECqAfJz7ECqAfNx7ECqAfx0bECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAed17ECqAed1LECqAeBxhuoB_yvsQKoB9XOG6gHvtmxAqgHq8UbqAeVCKgHnNwbqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbECkggLY0VyOFhDbm9TVlmoCAHSCDQIgEEQARheMgKCAjoVgMKAgICAgAaAwICAgICAgAKqgIAQSNmg0jVQFFjgoaag0eiUA2ABmgkbaHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tsQnvx5f1GYvcg8gJF8gJjwHICZAByAnCAboLPQgDEAUYFiAHKAEwHEABSABYfWAAaABwAYgBAJgBAaIBCAoAqAIC2AICqAEB2AEGgAIBiAIJugMFdmlicnXQCxLgCwHSDAIQAdoMJgoLEIC-68uEldGDpwESAgEDGg0Y3rv2m1cg6PHP29wFQAFKAhAfmg0BEqoNAk5HyA0B0g2qA2h0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L3NlYXJjaGFkcy9saW5rL2NsaWNrP2xpZD01ODcwMDAwODk5MTQyODE2MSZkc19hX2NpZD05Njc5MDE4NCZkc19hX2NhaWQ9MjM0MTc0NzgyMDYmZHNfYV9hZ2lkPSZkc19hX2ZpaWQ9JmRzX2FfbGlkPSZkc19hX2V4dGlkPSYmZHNfZV9hZGlkPSZkc19lX21hdGNodHlwZT0mZHNfZV9kZXZpY2U9YyZkc19lX25ldHdvcms9eCYmZHNfdXJsX3Y9MiZkc19kZXN0X3VybD1odHRwczovL2ZpcmViYXNlLmdvb2dsZS5jb20_dXRtX3NvdXJjZT1QTUFYJnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY2FtcGFpZ249Q2xvdWQtU1MtRFItRmlyZWJhc2UtRlkyNi1nbG9iYWwtcG1heC0xNzEzNTkwJnV0bV9jb250ZW50PXBtYXgmZ2Nsc3JjPWF3LmRzJmdhZF9zb3VyY2U9MiZnYWRfY2FtcGFpZ25pZD0yMzQxMjQ0ODczNLAOvtXi5Bi4E____________wGIFAGwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI4LGmoNHolAMV0nUdCR1U5yR4EAEYASAAEgJqBvD_BwE&num=1&cid=CAASqwHkaPbc9gsfYFu1aNaxbflT68LppQ83OcedSML7gIET8BsvtWgsMhQiWuuTjff2-NVvjXnICoSzkyK9nwDObRk1hvktfimbyA1h_6YYlF4zJeqxwPZSsbApu3fhyrWzh7hMFGKky12tjTY-nSqSt-YyYa1nQc3oMyuD9og9I-GgmlWqdF_WSgdx1o_tQFLH8fXKWlucHyNgN0Ls08oggTqInYJvSyKawciUE78&ad_cpn=%5BCPN%5D&sig=AOD64_1H75Q-To8Qv9fJ8tR6ep6NbeFXCQ&ctype=110&video_id=cEr8XCnoSVY&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                    - generic [ref=e262]: Sign up
+            - generic [ref=e267] [cursor=pointer]:
+              - link [ref=e268]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THEbdE2jWyBBxkWqjk4JmHHq
+                - generic [ref=e278]:
+                  - generic [ref=e281]:
+                    - img
+                  - generic [ref=e282]: 41 videos
+              - generic [ref=e285]:
+                - heading "Cypress by Testers Talk☑️" [level=3] [ref=e286]:
+                  - link "Cypress by Testers Talk☑️" [ref=e287]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THEbdE2jWyBBxkWqjk4JmHHq
+                - generic [ref=e289]:
+                  - group [ref=e290]:
+                    - link "Testers Talk" [ref=e293]:
+                      - /url: /@testerstalk
+                    - generic [ref=e294]: •
+                    - link "Playlist" [ref=e297]:
+                      - /url: /@testerstalk
+                  - group [ref=e298]
+                  - group [ref=e299]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e301]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THEbdE2jWyBBxkWqjk4JmHHq
+                  - group [ref=e302]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e304]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THEbdE2jWyBBxkWqjk4JmHHq
+                  - group [ref=e305]
+                  - group [ref=e306]:
+                    - link "View full playlist" [ref=e309]:
+                      - /url: /playlist?list=PLUeDIlio4THEbdE2jWyBBxkWqjk4JmHHq
+            - generic [ref=e311] [cursor=pointer]:
+              - link [ref=e312]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THH_fGwBiFk79BCktNLVKzHm
+                - generic [ref=e322]:
+                  - generic [ref=e325]:
+                    - img
+                  - generic [ref=e326]: 41 videos
+              - generic [ref=e329]:
+                - heading "Learn Cypress in 3 Hours | Full Cypress Tutorial | Cypress Automation" [level=3] [ref=e330]:
+                  - link "Learn Cypress in 3 Hours | Full Cypress Tutorial | Cypress Automation" [ref=e331]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THH_fGwBiFk79BCktNLVKzHm
+                - generic [ref=e333]:
+                  - group [ref=e334]:
+                    - link "Testers Talk" [ref=e337]:
+                      - /url: /@testerstalk
+                    - generic [ref=e338]: •
+                    - link "Playlist" [ref=e341]:
+                      - /url: /@testerstalk
+                  - group [ref=e342]
+                  - group [ref=e343]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e345]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THH_fGwBiFk79BCktNLVKzHm
+                  - group [ref=e346]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e348]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THH_fGwBiFk79BCktNLVKzHm
+                  - group [ref=e349]
+                  - group [ref=e350]:
+                    - link "View full playlist" [ref=e353]:
+                      - /url: /playlist?list=PLUeDIlio4THH_fGwBiFk79BCktNLVKzHm
+            - generic [ref=e355]:
+              - link [ref=e357] [cursor=pointer]:
+                - /url: /watch?v=oJV5whmzfZI&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGvSBwkJKAsBhyohjO8%3D
+              - generic [ref=e359] [cursor=pointer]:
+                - generic [ref=e360]:
+                  - generic [ref=e361]:
+                    - heading "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs 5 hours, 4 minutes" [level=3] [ref=e362]:
+                      - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs 5 hours, 4 minutes" [ref=e363]:
+                        - /url: /watch?v=oJV5whmzfZI&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGvSBwkJKAsBhyohjO8%3D
+                        - text: Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs
+                    - button "Action menu" [ref=e367]:
+                      - generic [ref=e370]:
+                        - img
+                  - generic [ref=e373]:
+                    - generic [ref=e374]: 79K views
+                    - generic [ref=e375]: •2 years ago
+                - generic [ref=e376]:
+                  - link "Go to channel Testers Talk" [ref=e377]:
+                    - /url: /@testerstalk
+                  - link "Testers Talk" [ref=e383]:
+                    - /url: /@testerstalk
+                - generic [ref=e384]:
+                  - generic [ref=e385]: "Cypress Tutorial Full Course 2023 | Learn Cypress in 5 Hrs | #cypress #cypresstutorial #tutorial Cypress Automation Testing End ..."
+                  - tooltip "tooltip"
+                - generic [ref=e388]:
+                  - generic [ref=e389]:
+                    - generic [ref=e393]: 38 chapters
+                    - button [ref=e394]
+                  - button "More" [ref=e399]:
+                    - generic [ref=e403]:
+                      - img
+            - generic [ref=e408] [cursor=pointer]:
+              - link [ref=e409]:
+                - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM
+                - generic [ref=e419]:
+                  - generic [ref=e422]:
+                    - img
+                  - generic [ref=e423]: 82 videos
+              - generic [ref=e426]:
+                - heading "Playwright by Testers Talk ✅" [level=3] [ref=e427]:
+                  - link "Playwright by Testers Talk ✅" [ref=e428]:
+                    - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM
+                - generic [ref=e430]:
+                  - group [ref=e431]:
+                    - link "Testers Talk" [ref=e434]:
+                      - /url: /@testerstalk
+                    - generic [ref=e435]: •
+                    - link "Playlist" [ref=e438]:
+                      - /url: /@testerstalk
+                  - group [ref=e439]
+                  - group [ref=e440]:
+                    - link "#1 Playwright Tutorial Full Course 2026 | Playwright Testing Tutorial · 6:55:08" [ref=e442]:
+                      - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM
+                  - group [ref=e443]:
+                    - link "#2 Playwright API Testing Tutorial Crash Course 2024 · 1:59:55" [ref=e445]:
+                      - /url: /watch?v=lM-lqPun9P8&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM
+                  - group [ref=e446]
+                  - group [ref=e447]:
+                    - link "View full playlist" [ref=e450]:
+                      - /url: /playlist?list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM
+            - generic [ref=e452] [cursor=pointer]:
+              - link [ref=e453]:
+                - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THHdUG8ygn-qzvc2XQpI3qzi
+                - generic [ref=e463]:
+                  - generic [ref=e466]:
+                    - img
+                  - generic [ref=e467]: 82 videos
+              - generic [ref=e470]:
+                - heading "Playwright with JavaScript by Testers Talk ✅" [level=3] [ref=e471]:
+                  - link "Playwright with JavaScript by Testers Talk ✅" [ref=e472]:
+                    - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THHdUG8ygn-qzvc2XQpI3qzi
+                - generic [ref=e474]:
+                  - group [ref=e475]:
+                    - link "Testers Talk" [ref=e478]:
+                      - /url: /@testerstalk
+                    - generic [ref=e479]: •
+                    - link "Playlist" [ref=e482]:
+                      - /url: /@testerstalk
+                  - group [ref=e483]
+                  - group [ref=e484]:
+                    - link "#1 Playwright Tutorial Full Course 2026 | Playwright Testing Tutorial · 6:55:08" [ref=e486]:
+                      - /url: /watch?v=2poXBtifpzA&list=PLUeDIlio4THHdUG8ygn-qzvc2XQpI3qzi
+                  - group [ref=e487]:
+                    - link "#2 Playwright API Testing Tutorial Crash Course 2024 · 1:59:55" [ref=e489]:
+                      - /url: /watch?v=lM-lqPun9P8&list=PLUeDIlio4THHdUG8ygn-qzvc2XQpI3qzi
+                  - group [ref=e490]
+                  - group [ref=e491]:
+                    - link "View full playlist" [ref=e494]:
+                      - /url: /playlist?list=PLUeDIlio4THHdUG8ygn-qzvc2XQpI3qzi
+            - generic [ref=e496]:
+              - link [ref=e498] [cursor=pointer]:
+                - /url: /@testerstalk
+              - generic [ref=e501]:
+                - link "Testers Talk @testerstalk•30K subscribers Hi Friends Welcome to Testers Talk channel, Myself Bakkappa N. I have been working as QA SDET Automation Test Lead over a ..." [ref=e502] [cursor=pointer]:
+                  - /url: /@testerstalk
+                  - generic [ref=e503]:
+                    - generic [ref=e507]: Testers Talk
+                    - generic [ref=e508]: "@testerstalk•30K subscribers"
+                    - generic [ref=e509]: Hi Friends Welcome to Testers Talk channel, Myself Bakkappa N. I have been working as QA SDET Automation Test Lead over a ...
+                - link "Subscribe" [ref=e514] [cursor=pointer]:
+                  - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fresults%253Fsearch_query%253DCypress%252Bby%252BTesters%252BTalk%26continue_action%3DQUFFLUhqa0hVcjJqYmpHRlFTX3pSRFlQdzhZLUpfUnFfd3xBQ3Jtc0tsdWlyMzZTOUtDSjNVODJ0VmN4X0ZtYzhfQzF2M1RUZ1Rmd2NkNnlyOXVNc0dpeUZBZ0tJZHJPNDV1ZGxQVXdCdUZQZmtWT0xIS1VONVlaV1BKTTROSW82RzNRbHRnTGR2Q2E2VkdqTmVhNkVvUG5OSUhabE5vbWxLWHY0b01PNThqbmRmblZ6MDBNWDJFQWFRanhxaWcxSUlPU0lsaTF2T0NZcm1wUGxBUDJPYVpkblRqek4zeVk1WWVLTEhxWkVuNmM5V1o&hl=en
+                  - generic [ref=e515]: Subscribe
+            - generic [ref=e520] [cursor=pointer]:
+              - link [ref=e521]:
+                - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THEXmQxNvKmdDxAVloGTHXMr
+                - generic [ref=e531]:
+                  - generic [ref=e534]:
+                    - img
+                  - generic [ref=e535]: 111 videos
+              - generic [ref=e538]:
+                - heading "Playwright TypeScript by Testers Talk ✅" [level=3] [ref=e539]:
+                  - link "Playwright TypeScript by Testers Talk ✅" [ref=e540]:
+                    - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THEXmQxNvKmdDxAVloGTHXMr
+                - generic [ref=e542]:
+                  - group [ref=e543]:
+                    - link "Testers Talk" [ref=e546]:
+                      - /url: /@testerstalk
+                    - generic [ref=e547]: •
+                    - link "Playlist" [ref=e550]:
+                      - /url: /@testerstalk
+                  - group [ref=e551]
+                  - group [ref=e552]:
+                    - link "#1 Playwright Automation Using TypeScript Full Course 2026 | Playwright TypeScript Beginner Tutorial · 8:55:10" [ref=e554]:
+                      - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THEXmQxNvKmdDxAVloGTHXMr
+                  - group [ref=e555]:
+                    - link "#2 Advanced Playwright TypeScript Tutorial Full Course 2025 | Playwright Automation Tutorial · 2:22:14" [ref=e557]:
+                      - /url: /watch?v=YfRazDhi9Fw&list=PLUeDIlio4THEXmQxNvKmdDxAVloGTHXMr
+                  - group [ref=e558]
+                  - group [ref=e559]:
+                    - link "View full playlist" [ref=e562]:
+                      - /url: /playlist?list=PLUeDIlio4THEXmQxNvKmdDxAVloGTHXMr
+            - generic [ref=e564]:
+              - heading "People also watched" [level=2] [ref=e567]:
+                - generic [ref=e569]: People also watched
+              - generic [ref=e571]:
+                - generic [ref=e572]:
+                  - generic [ref=e574]:
+                    - link [ref=e576] [cursor=pointer]:
+                      - /url: /watch?v=xV05PkQWIj8&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                    - generic [ref=e578] [cursor=pointer]:
+                      - generic [ref=e579]:
+                        - generic [ref=e580]:
+                          - heading "Interview for playwright Automation Testing 2025 1 hour" [level=3] [ref=e581]:
+                            - link "Interview for playwright Automation Testing 2025 1 hour" [ref=e582]:
+                              - /url: /watch?v=xV05PkQWIj8&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                              - text: Interview for playwright Automation Testing 2025
+                          - button "Action menu" [ref=e586]:
+                            - generic [ref=e589]:
+                              - img
+                        - generic [ref=e592]:
+                          - generic [ref=e593]: 29K views
+                          - generic [ref=e594]: •9 months ago
+                      - generic [ref=e595]:
+                        - link "Go to channel Akash Mishra" [ref=e596]:
+                          - /url: /@akashmishra3120
+                        - link "Akash Mishra" [ref=e601]:
+                          - /url: /@akashmishra3120
+                      - generic [ref=e602]:
+                        - text: In this exclusive interview, we sit down with [Full Name], [Designation, e.g., CEO/Director] of, to discuss the company's journey, ...
+                        - tooltip "tooltip"
+                      - img "4K" [ref=e607]:
+                        - generic [ref=e608]: 4K
+                      - generic [ref=e611]:
+                        - generic [ref=e612]:
+                          - generic [ref=e613]:
+                            - generic [ref=e616]:
+                              - img
+                            - generic [ref=e617]: Summary
+                          - button "Malcolm and Anil conduct a technical job interview with Akash Mishra for a QA automation role on a digital experience platform project. They discuss project expectations, testing methodologies, API and UI automation, and the transition from JavaScript to TypeScript within the Playwright framework." [ref=e618]
+                          - text: ·
+                        - button "More" [ref=e623]:
+                          - generic [ref=e627]:
+                            - img
+                  - generic [ref=e632]:
+                    - link [ref=e634] [cursor=pointer]:
+                      - /url: /watch?v=kZbuYLalk9U&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                    - generic [ref=e636] [cursor=pointer]:
+                      - generic [ref=e637]:
+                        - generic [ref=e638]:
+                          - heading "Cypress Automation Testing Part01 | Cypress Tutorial | Cypress Testing with JavaScript 1 hour, 18 minutes" [level=3] [ref=e639]:
+                            - link "Cypress Automation Testing Part01 | Cypress Tutorial | Cypress Testing with JavaScript 1 hour, 18 minutes" [ref=e640]:
+                              - /url: /watch?v=kZbuYLalk9U&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                              - text: Cypress Automation Testing Part01 | Cypress Tutorial | Cypress Testing with JavaScript
+                          - button "Action menu" [ref=e644]:
+                            - generic [ref=e647]:
+                              - img
+                        - generic [ref=e650]:
+                          - generic [ref=e651]: 3K views
+                          - generic [ref=e652]: •2 years ago
+                      - generic [ref=e653]:
+                        - link "Go to channel Testers Talk" [ref=e654]:
+                          - /url: /@testerstalk
+                        - link "Testers Talk" [ref=e659]:
+                          - /url: /@testerstalk
+                      - generic [ref=e660]:
+                        - generic [ref=e661]: "Cypress Tutorial | Cypress Automation | #cypress #cypresstutorial #tutorial Cypress Automation Testing End to End Web ..."
+                        - tooltip "tooltip"
+                      - generic [ref=e664]:
+                        - generic [ref=e665]:
+                          - generic [ref=e669]: 15 chapters
+                          - button "Cypress Tutorial Full Course | Cypress Getting Started Chapter01 | What is cypress advantages and limitations | Cypress vs Selenium WebDriver | Install nodejs and visual studio code | How to install cypress | open Cypress Test Runner | Cypress Scaffold examples | Cypress folder structure | Cypress Studio Record and Play Test | How to Write First Cypress Automation Test | How create logs in cypress | How to run test on chrome edge firefox | How to run test in headless mode | How to disable auto rerun test in cypress" [ref=e670]
+                        - button "More" [ref=e675]:
+                          - generic [ref=e679]:
+                            - img
+                  - generic [ref=e684]:
+                    - link [ref=e686] [cursor=pointer]:
+                      - /url: /watch?v=EsLuhij98sQ&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                    - generic [ref=e688] [cursor=pointer]:
+                      - generic [ref=e689]:
+                        - generic [ref=e690]:
+                          - heading "🚀 RUN Cypress TEST in Test Runner and Terminal | Cypress Tutorial for Beginners | Cypress Testing 12 minutes, 27 seconds" [level=3] [ref=e691]:
+                            - link "🚀 RUN Cypress TEST in Test Runner and Terminal | Cypress Tutorial for Beginners | Cypress Testing 12 minutes, 27 seconds" [ref=e692]:
+                              - /url: /watch?v=EsLuhij98sQ&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                              - text: 🚀 RUN Cypress TEST in Test Runner and Terminal | Cypress Tutorial for Beginners | Cypress Testing
+                          - button "Action menu" [ref=e696]:
+                            - generic [ref=e699]:
+                              - img
+                        - generic [ref=e702]:
+                          - generic [ref=e703]: 5.3K views
+                          - generic [ref=e704]: •5 years ago
+                      - generic [ref=e705]:
+                        - link "Go to channel JoanMedia" [ref=e706]:
+                          - /url: /@joanmedia
+                        - link "JoanMedia" [ref=e711]:
+                          - /url: /@joanmedia
+                      - generic [ref=e712]:
+                        - generic [ref=e713]: In this CYPRESS TUTORIAL video, you will understand HOW to EXECUTE TEST SCRIPTS in CYPRESS IO. Also the ...
+                        - tooltip "tooltip"
+                  - generic [ref=e715]:
+                    - link [ref=e717] [cursor=pointer]:
+                      - /url: /watch?v=AnyKTiC3P1M&t=5813s&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                    - generic [ref=e719] [cursor=pointer]:
+                      - generic [ref=e720]:
+                        - generic [ref=e721]:
+                          - heading "Cypress Automation Testing from scratch for Beginners | Complete Step-by-Step Guide 2 hours, 42 minutes" [level=3] [ref=e722]:
+                            - link "Cypress Automation Testing from scratch for Beginners | Complete Step-by-Step Guide 2 hours, 42 minutes" [ref=e723]:
+                              - /url: /watch?v=AnyKTiC3P1M&t=5813s&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                              - text: Cypress Automation Testing from scratch for Beginners | Complete Step-by-Step Guide
+                          - button "Action menu" [ref=e727]:
+                            - generic [ref=e730]:
+                              - img
+                        - generic [ref=e733]:
+                          - generic [ref=e734]: 11K views
+                          - generic [ref=e735]: •1 year ago
+                      - generic [ref=e736]:
+                        - link "Go to channel Test Automation 101" [ref=e737]:
+                          - /url: /@testautomation999
+                        - link "Test Automation 101" [ref=e742]:
+                          - /url: /@testautomation999
+                      - generic [ref=e743]:
+                        - generic [ref=e744]: Cypress Automation Testing for Beginners | Full Step-by-Step Guide Want to learn Cypress for test automation? Cypress is a ...
+                        - tooltip "tooltip"
+                      - generic [ref=e747]:
+                        - generic [ref=e748]:
+                          - generic [ref=e752]: Matching chapter
+                          - button "1:36:53 Cypress Data-Driven Testing" [ref=e753]
+                        - button "More" [ref=e758]:
+                          - generic [ref=e762]:
+                            - img
+                - generic "+6 more" [ref=e767] [cursor=pointer]
+            - generic [ref=e769] [cursor=pointer]:
+              - link [ref=e770]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THHoJafIFHhaZZkoy4x2jsPM
+                - generic [ref=e780]:
+                  - generic [ref=e783]:
+                    - img
+                  - generic [ref=e784]: 41 videos
+              - generic [ref=e787]:
+                - heading "Cypress - JavaScript End to End Testing(2023 Series)" [level=3] [ref=e788]:
+                  - link "Cypress - JavaScript End to End Testing(2023 Series)" [ref=e789]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THHoJafIFHhaZZkoy4x2jsPM
+                - generic [ref=e791]:
+                  - group [ref=e792]:
+                    - link "Testers Talk" [ref=e795]:
+                      - /url: /@testerstalk
+                    - generic [ref=e796]: •
+                    - link "Playlist" [ref=e799]:
+                      - /url: /@testerstalk
+                  - group [ref=e800]
+                  - group [ref=e801]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e803]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THHoJafIFHhaZZkoy4x2jsPM
+                  - group [ref=e804]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e806]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THHoJafIFHhaZZkoy4x2jsPM
+                  - group [ref=e807]
+                  - group [ref=e808]:
+                    - link "View full playlist" [ref=e811]:
+                      - /url: /playlist?list=PLUeDIlio4THHoJafIFHhaZZkoy4x2jsPM
+            - generic [ref=e813] [cursor=pointer]:
+              - link [ref=e814]:
+                - /url: /watch?v=QKBa8lt5Wfo&list=PLUeDIlio4THGaSQ_s5WFc2Mo7Ikne2kA5&pp=0gcJCWYDOCosWNin
+                - generic [ref=e824]:
+                  - generic [ref=e827]:
+                    - img
+                  - generic [ref=e828]: 36 videos
+              - generic [ref=e831]:
+                - heading "API Testing by Testers Talk☑️" [level=3] [ref=e832]:
+                  - link "API Testing by Testers Talk☑️" [ref=e833]:
+                    - /url: /watch?v=QKBa8lt5Wfo&list=PLUeDIlio4THGaSQ_s5WFc2Mo7Ikne2kA5&pp=0gcJCWYDOCosWNin
+                - generic [ref=e835]:
+                  - group [ref=e836]:
+                    - link "Testers Talk" [ref=e839]:
+                      - /url: /@testerstalk
+                    - generic [ref=e840]: •
+                    - link "Playlist" [ref=e843]:
+                      - /url: /@testerstalk
+                  - group [ref=e844]
+                  - group [ref=e845]:
+                    - link "API Testing Postman Tutorial Full Course 2024 · 2:43:38" [ref=e847]:
+                      - /url: /watch?v=QKBa8lt5Wfo&list=PLUeDIlio4THGaSQ_s5WFc2Mo7Ikne2kA5&pp=0gcJCQEBOCosWNin
+                  - group [ref=e848]:
+                    - link "REST Assured API Testing Tutorial Crash Course 2024 · 4:06:41" [ref=e850]:
+                      - /url: /watch?v=o9KJhGHl49M&list=PLUeDIlio4THGaSQ_s5WFc2Mo7Ikne2kA5&pp=0gcJCQEBOCosWNin
+                  - group [ref=e851]
+                  - group [ref=e852]:
+                    - link "View full playlist" [ref=e855]:
+                      - /url: /playlist?list=PLUeDIlio4THGaSQ_s5WFc2Mo7Ikne2kA5
+            - generic [ref=e856]:
+              - generic [ref=e859]:
+                - img [ref=e861]:
+                  - generic [ref=e863]:
+                    - img
+                - heading "Shorts" [level=2] [ref=e866]
+              - generic [ref=e868]:
+                - generic [ref=e871]:
+                  - link [ref=e872] [cursor=pointer]:
+                    - /url: /shorts/AboZUuexKcc
+                  - generic [ref=e876] [cursor=pointer]:
+                    - 'link "#7 Playwright Vs Cypress Automation | Playwright Testing #playwright #testing #e2e" [ref=e877]':
+                      - /url: /shorts/AboZUuexKcc
+                    - generic [ref=e878]: 6.4K views
+                  - button "More actions" [ref=e880] [cursor=pointer]:
+                    - generic [ref=e884]:
+                      - img
+                - generic [ref=e890]:
+                  - link [ref=e891] [cursor=pointer]:
+                    - /url: /shorts/bDBTBIdtP3I
+                  - generic [ref=e895] [cursor=pointer]:
+                    - 'link "#8 Cypress Vs Playwright Automation | Playwright Testing Tutorial #playwright #testing #e2e" [ref=e896]':
+                      - /url: /shorts/bDBTBIdtP3I
+                    - generic [ref=e897]: 1.4K views
+                  - button "More actions" [ref=e899] [cursor=pointer]:
+                    - generic [ref=e903]:
+                      - img
+                - generic [ref=e909]:
+                  - link [ref=e910] [cursor=pointer]:
+                    - /url: /shorts/ciKyR7FZF5o
+                  - generic [ref=e914] [cursor=pointer]:
+                    - link "Cypress better than Selenium?" [ref=e915]:
+                      - /url: /shorts/ciKyR7FZF5o
+                    - generic [ref=e916]: 27K views
+                  - button "More actions" [ref=e918] [cursor=pointer]:
+                    - generic [ref=e922]:
+                      - img
+                - generic [ref=e928]:
+                  - link [ref=e929] [cursor=pointer]:
+                    - /url: /shorts/jhLziG8XQEs
+                  - generic [ref=e933] [cursor=pointer]:
+                    - link "Top Automation Testing Tools in 2025 | Selenium vs Cypress vs Playwright & More" [ref=e934]:
+                      - /url: /shorts/jhLziG8XQEs
+                    - generic [ref=e935]: 46K views
+                  - button "More actions" [ref=e937] [cursor=pointer]:
+                    - generic [ref=e941]:
+                      - img
+                - generic [ref=e947]:
+                  - link [ref=e948] [cursor=pointer]:
+                    - /url: /shorts/GKwqLRwQzJM
+                  - generic [ref=e952] [cursor=pointer]:
+                    - 'link "Selenium vs Cypress | #AskRaghav" [ref=e953]':
+                      - /url: /shorts/GKwqLRwQzJM
+                    - generic [ref=e954]: 138K views
+                  - button "More actions" [ref=e956] [cursor=pointer]:
+                    - generic [ref=e960]:
+                      - img
+            - generic [ref=e965] [cursor=pointer]:
+              - link [ref=e966]:
+                - /url: /watch?v=kZbuYLalk9U&list=PLUeDIlio4THFdc_Iqw4wyJUX43LUBzd2f
+                - generic [ref=e976]:
+                  - generic [ref=e979]:
+                    - img
+                  - generic [ref=e980]: 38 videos
+              - generic [ref=e983]:
+                - heading "Cypress by Testers" [level=3] [ref=e984]:
+                  - link "Cypress by Testers" [ref=e985]:
+                    - /url: /watch?v=kZbuYLalk9U&list=PLUeDIlio4THFdc_Iqw4wyJUX43LUBzd2f
+                - generic [ref=e987]:
+                  - group [ref=e988]:
+                    - link "Testers Talk" [ref=e991]:
+                      - /url: /@testerstalk
+                    - generic [ref=e992]: •
+                    - link "Playlist" [ref=e995]:
+                      - /url: /@testerstalk
+                  - group [ref=e996]
+                  - group [ref=e997]:
+                    - link "Cypress Automation Testing Part01 | Cypress Tutorial | Cypress Testing with JavaScript · 1:18:11" [ref=e999]:
+                      - /url: /watch?v=kZbuYLalk9U&list=PLUeDIlio4THFdc_Iqw4wyJUX43LUBzd2f
+                  - group [ref=e1000]:
+                    - link "Cypress Automation Testing Part02 | Cypress Tutorial | Cypress Testing with JavaScript · 1:51:20" [ref=e1002]:
+                      - /url: /watch?v=qa2zygrqV40&list=PLUeDIlio4THFdc_Iqw4wyJUX43LUBzd2f
+                  - group [ref=e1003]
+                  - group [ref=e1004]:
+                    - link "View full playlist" [ref=e1007]:
+                      - /url: /playlist?list=PLUeDIlio4THFdc_Iqw4wyJUX43LUBzd2f
+            - generic [ref=e1009] [cursor=pointer]:
+              - link [ref=e1010]:
+                - /url: /watch?v=OvCLwh5vN8g&list=PLBw1ubD1J1Ujws5XLs7BGJqQkQVpJtmBJ
+                - generic [ref=e1020]:
+                  - generic [ref=e1023]:
+                    - img
+                  - generic [ref=e1024]: 41 lessons
+              - generic [ref=e1027]:
+                - heading "🔥 Master Cypress Automation Testing | Complete Cypress Tutorial Series 🚀" [level=3] [ref=e1028]:
+                  - link "🔥 Master Cypress Automation Testing | Complete Cypress Tutorial Series 🚀" [ref=e1029]:
+                    - /url: /watch?v=OvCLwh5vN8g&list=PLBw1ubD1J1Ujws5XLs7BGJqQkQVpJtmBJ
+                - generic [ref=e1031]:
+                  - group [ref=e1032]:
+                    - link "Testing Funda by Zeeshan Asghar" [ref=e1035]:
+                      - /url: /@TestingFunda
+                    - generic [ref=e1036]: •
+                    - link "Course" [ref=e1039]:
+                      - /url: /@TestingFunda
+                  - group [ref=e1040]
+                  - group [ref=e1041]:
+                    - 'link "Cypress tutorial #1 | Cypress Architecture & Features · 8:02" [ref=e1043]':
+                      - /url: /watch?v=OvCLwh5vN8g&list=PLBw1ubD1J1Ujws5XLs7BGJqQkQVpJtmBJ
+                  - group [ref=e1044]:
+                    - 'link "Cypress tutorial #2 | Installation and Configuration on Windows · 17:20" [ref=e1046]':
+                      - /url: /watch?v=1VkwWv3YLt0&list=PLBw1ubD1J1Ujws5XLs7BGJqQkQVpJtmBJ&pp=0gcJCQEBOCosWNin
+                  - group [ref=e1047]
+                  - group [ref=e1048]:
+                    - link "View full course" [ref=e1051]:
+                      - /url: /playlist?list=PLBw1ubD1J1Ujws5XLs7BGJqQkQVpJtmBJ
+            - generic [ref=e1052]:
+              - generic [ref=e1055]:
+                - img [ref=e1057]:
+                  - generic [ref=e1059]:
+                    - img
+                - heading "Shorts" [level=2] [ref=e1062]
+              - generic [ref=e1063]:
+                - generic [ref=e1064]:
+                  - generic [ref=e1067]:
+                    - link [ref=e1068] [cursor=pointer]:
+                      - /url: /shorts/OjxbCs2lNHA
+                    - generic [ref=e1072] [cursor=pointer]:
+                      - link "5 Cypress Key Features You Need to Know! 🤔" [ref=e1073]:
+                        - /url: /shorts/OjxbCs2lNHA
+                      - generic [ref=e1074]: 25K views
+                    - button "More actions" [ref=e1076] [cursor=pointer]:
+                      - generic [ref=e1080]:
+                        - img
+                  - generic [ref=e1086]:
+                    - link [ref=e1087] [cursor=pointer]:
+                      - /url: /shorts/neB9MI_HH2k
+                    - generic [ref=e1091] [cursor=pointer]:
+                      - link "Testing a Real-time Chat Web Application using Cypress" [ref=e1092]:
+                        - /url: /shorts/neB9MI_HH2k
+                      - generic [ref=e1093]: 863 views
+                    - button "More actions" [ref=e1095] [cursor=pointer]:
+                      - generic [ref=e1099]:
+                        - img
+                  - generic [ref=e1105]:
+                    - link [ref=e1106] [cursor=pointer]:
+                      - /url: /shorts/zrTlPo9XLtU
+                    - generic [ref=e1110] [cursor=pointer]:
+                      - link "How to Explain Test Automation framework in Interview?" [ref=e1111]:
+                        - /url: /shorts/zrTlPo9XLtU
+                      - generic [ref=e1112]: 19K views
+                    - button "More actions" [ref=e1114] [cursor=pointer]:
+                      - generic [ref=e1118]:
+                        - img
+                  - generic [ref=e1124]:
+                    - link [ref=e1125] [cursor=pointer]:
+                      - /url: /shorts/TWiKKjeGaLc
+                    - generic [ref=e1129] [cursor=pointer]:
+                      - 'link "🚀 Elevate Your API Testing Game: Playwright vs. Cypress!" [ref=e1130]':
+                        - /url: /shorts/TWiKKjeGaLc
+                      - generic [ref=e1131]: 6.4K views
+                    - button "More actions" [ref=e1133] [cursor=pointer]:
+                      - generic [ref=e1137]:
+                        - img
+                  - generic [ref=e1143]:
+                    - link [ref=e1144] [cursor=pointer]:
+                      - /url: /shorts/W8xsbjMVRb8
+                    - generic [ref=e1148] [cursor=pointer]:
+                      - 'link "cypress writing first test | #cypress | automation testing" [ref=e1149]':
+                        - /url: /shorts/W8xsbjMVRb8
+                      - generic [ref=e1150]: 7.9K views
+                    - button "More actions" [ref=e1152] [cursor=pointer]:
+                      - generic [ref=e1156]:
+                        - img
+                - generic [ref=e1160]:
+                  - generic [ref=e1163]:
+                    - link [ref=e1164] [cursor=pointer]:
+                      - /url: /shorts/T5jPugnc08Y
+                    - generic [ref=e1168] [cursor=pointer]:
+                      - link "Cypress Tutorial-Cypress Automation-Cypress Interview Questions-Cypress Tutorial for Beginners" [ref=e1169]:
+                        - /url: /shorts/T5jPugnc08Y
+                      - generic [ref=e1170]: 1K views
+                    - button "More actions" [ref=e1172] [cursor=pointer]:
+                      - generic [ref=e1176]:
+                        - img
+                  - generic [ref=e1182]:
+                    - link [ref=e1183] [cursor=pointer]:
+                      - /url: /shorts/HDd5W2Zw_jo
+                    - generic [ref=e1187] [cursor=pointer]:
+                      - link "How to write an E2E test in Cypress" [ref=e1188]:
+                        - /url: /shorts/HDd5W2Zw_jo
+                      - generic [ref=e1189]: 6.6K views
+                    - button "More actions" [ref=e1191] [cursor=pointer]:
+                      - generic [ref=e1195]:
+                        - img
+                  - generic [ref=e1201]:
+                    - link [ref=e1202] [cursor=pointer]:
+                      - /url: /shorts/XOyiyuIRfNE
+                    - generic [ref=e1206] [cursor=pointer]:
+                      - 'link "What is Cypress? #cypress #cypressio" [ref=e1207]':
+                        - /url: /shorts/XOyiyuIRfNE
+                      - generic [ref=e1208]: 12K views
+                    - button "More actions" [ref=e1210] [cursor=pointer]:
+                      - generic [ref=e1214]:
+                        - img
+                  - generic [ref=e1220]:
+                    - link [ref=e1221] [cursor=pointer]:
+                      - /url: /shorts/DM4Mb-JEf1c
+                    - generic [ref=e1225] [cursor=pointer]:
+                      - 'link "What is Cypress?|Cypress Automation Testing #cypresstesting#cypress#automationtesting" [ref=e1226]':
+                        - /url: /shorts/DM4Mb-JEf1c
+                      - generic [ref=e1227]: 941 views
+                    - button "More actions" [ref=e1229] [cursor=pointer]:
+                      - generic [ref=e1233]:
+                        - img
+                  - generic [ref=e1239]:
+                    - link [ref=e1240] [cursor=pointer]:
+                      - /url: /shorts/tZt-0AvM30s
+                    - generic [ref=e1244] [cursor=pointer]:
+                      - link "What Is Cypress? The Ultimate Tool for Web Testing" [ref=e1245]:
+                        - /url: /shorts/tZt-0AvM30s
+                      - generic [ref=e1246]: 6.6K views
+                    - button "More actions" [ref=e1248] [cursor=pointer]:
+                      - generic [ref=e1252]:
+                        - img
+              - button "Show more" [ref=e1259] [cursor=pointer]:
+                - generic [ref=e1260]: Show more
+                - generic [ref=e1264]:
+                  - img
+            - generic [ref=e1269]:
+              - link [ref=e1271] [cursor=pointer]:
+                - /url: /watch?v=BQqzfHQkREo&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+              - generic [ref=e1273] [cursor=pointer]:
+                - generic [ref=e1274]:
+                  - generic [ref=e1275]:
+                    - heading "Cypress in 100 Seconds 2 minutes, 31 seconds" [level=3] [ref=e1276]:
+                      - link "Cypress in 100 Seconds 2 minutes, 31 seconds" [ref=e1277]:
+                        - /url: /watch?v=BQqzfHQkREo&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                        - text: Cypress in 100 Seconds
+                    - button "Action menu" [ref=e1281]:
+                      - generic [ref=e1284]:
+                        - img
+                  - generic [ref=e1287]:
+                    - generic [ref=e1288]: 465K views
+                    - generic [ref=e1289]: •4 years ago
+                - generic [ref=e1290]:
+                  - link "Go to channel Fireship" [ref=e1291]:
+                    - /url: /@Fireship
+                  - generic [ref=e1292]:
+                    - link "Fireship" [ref=e1296]:
+                      - /url: /@Fireship
+                    - img "Verified" [ref=e1301]:
+                      - generic [ref=e1304]:
+                        - img
+                - generic [ref=e1305]:
+                  - generic [ref=e1306]: Cypress is a complete testing solution for web developers. It uses a browser-based test-runner to visually validate your JavaScript ...
+                  - tooltip "tooltip"
+                - img "4K" [ref=e1311]:
+                  - generic [ref=e1312]: 4K
+                - generic [ref=e1315]:
+                  - generic [ref=e1316]:
+                    - generic [ref=e1320]: 4 moments
+                    - button "END-TO-END | INTEGRATION | UNIT TESTS | GLOBAL CONFIG" [ref=e1321]
+                  - button "More" [ref=e1326]:
+                    - generic [ref=e1330]:
+                      - img
+            - generic [ref=e1335]:
+              - link [ref=e1337] [cursor=pointer]:
+                - /url: /watch?v=6eaWRdpd-RQ&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+              - generic [ref=e1339] [cursor=pointer]:
+                - generic [ref=e1340]:
+                  - generic [ref=e1341]:
+                    - 'heading "Cypress #1 What is Cypress? Advantages & Limitations of Cypress 6 minutes, 27 seconds" [level=3] [ref=e1342]':
+                      - 'link "Cypress #1 What is Cypress? Advantages & Limitations of Cypress 6 minutes, 27 seconds" [ref=e1343]':
+                        - /url: /watch?v=6eaWRdpd-RQ&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                        - text: "Cypress #1 What is Cypress? Advantages & Limitations of Cypress"
+                    - button "Action menu" [ref=e1347]:
+                      - generic [ref=e1350]:
+                        - img
+                  - generic [ref=e1353]:
+                    - generic [ref=e1354]: 1.7K views
+                    - generic [ref=e1355]: •2 years ago
+                - generic [ref=e1356]:
+                  - link "Go to channel Testers Talk" [ref=e1357]:
+                    - /url: /@testerstalk
+                  - link "Testers Talk" [ref=e1362]:
+                    - /url: /@testerstalk
+                - generic [ref=e1363]:
+                  - generic [ref=e1364]: "Cypress #1 What is Cypress? Advantages & Limitations of Cypress | Cypress Tutorial Full Course 2023 | Learn Cypress in 5 Hrs ..."
+                  - tooltip "tooltip"
+            - generic [ref=e1366] [cursor=pointer]:
+              - link [ref=e1367]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFf4ivHGHKdcfs0X5pnPExD
+                - generic [ref=e1377]:
+                  - generic [ref=e1380]:
+                    - img
+                  - generic [ref=e1381]: 41 videos
+              - generic [ref=e1384]:
+                - heading "Testing JavaScript with Cypress – Full Course" [level=3] [ref=e1385]:
+                  - link "Testing JavaScript with Cypress – Full Course" [ref=e1386]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFf4ivHGHKdcfs0X5pnPExD
+                - generic [ref=e1388]:
+                  - group [ref=e1389]:
+                    - link "Testers Talk" [ref=e1392]:
+                      - /url: /@testerstalk
+                    - generic [ref=e1393]: •
+                    - link "Playlist" [ref=e1396]:
+                      - /url: /@testerstalk
+                  - group [ref=e1397]
+                  - group [ref=e1398]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e1400]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFf4ivHGHKdcfs0X5pnPExD
+                  - group [ref=e1401]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e1403]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THFf4ivHGHKdcfs0X5pnPExD
+                  - group [ref=e1404]
+                  - group [ref=e1405]:
+                    - link "View full playlist" [ref=e1408]:
+                      - /url: /playlist?list=PLUeDIlio4THFf4ivHGHKdcfs0X5pnPExD
+            - generic [ref=e1410] [cursor=pointer]:
+              - link [ref=e1411]:
+                - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THE9S6U7CUHObba0vtKXIwKP
+                - generic [ref=e1421]:
+                  - generic [ref=e1424]:
+                    - img
+                  - generic [ref=e1425]: 76 videos
+              - generic [ref=e1428]:
+                - heading "Playwright with TypeScript Full Course 2026" [level=3] [ref=e1429]:
+                  - link "Playwright with TypeScript Full Course 2026" [ref=e1430]:
+                    - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THE9S6U7CUHObba0vtKXIwKP
+                - generic [ref=e1432]:
+                  - group [ref=e1433]:
+                    - link "Testers Talk" [ref=e1436]:
+                      - /url: /@testerstalk
+                    - generic [ref=e1437]: •
+                    - link "Playlist" [ref=e1440]:
+                      - /url: /@testerstalk
+                  - group [ref=e1441]
+                  - group [ref=e1442]:
+                    - link "#1 Playwright Automation Using TypeScript Full Course 2026 | Playwright TypeScript Beginner Tutorial · 8:55:10" [ref=e1444]:
+                      - /url: /watch?v=788GvvcfwTY&list=PLUeDIlio4THE9S6U7CUHObba0vtKXIwKP
+                  - group [ref=e1445]:
+                    - link "#2 Advanced Playwright TypeScript Tutorial Full Course 2025 | Playwright Automation Tutorial · 2:22:14" [ref=e1447]:
+                      - /url: /watch?v=YfRazDhi9Fw&list=PLUeDIlio4THE9S6U7CUHObba0vtKXIwKP&pp=0gcJCQEBOCosWNin
+                  - group [ref=e1448]
+                  - group [ref=e1449]:
+                    - link "View full playlist" [ref=e1452]:
+                      - /url: /playlist?list=PLUeDIlio4THE9S6U7CUHObba0vtKXIwKP
+            - generic [ref=e1454]:
+              - link [ref=e1456] [cursor=pointer]:
+                - /url: /watch?v=qa2zygrqV40&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+              - generic [ref=e1458] [cursor=pointer]:
+                - generic [ref=e1459]:
+                  - generic [ref=e1460]:
+                    - heading "Cypress Automation Testing Part02 | Cypress Tutorial | Cypress Testing with JavaScript 1 hour, 51 minutes" [level=3] [ref=e1461]:
+                      - link "Cypress Automation Testing Part02 | Cypress Tutorial | Cypress Testing with JavaScript 1 hour, 51 minutes" [ref=e1462]:
+                        - /url: /watch?v=qa2zygrqV40&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                        - text: Cypress Automation Testing Part02 | Cypress Tutorial | Cypress Testing with JavaScript
+                    - button "Action menu" [ref=e1466]:
+                      - generic [ref=e1469]:
+                        - img
+                  - generic [ref=e1472]:
+                    - generic [ref=e1473]: 1.2K views
+                    - generic [ref=e1474]: •2 years ago
+                - generic [ref=e1475]:
+                  - link "Go to channel Testers Talk" [ref=e1476]:
+                    - /url: /@testerstalk
+                  - link "Testers Talk" [ref=e1481]:
+                    - /url: /@testerstalk
+                - generic [ref=e1482]:
+                  - generic [ref=e1483]: "Cypress Tutorial | Cypress Automation | #cypress #cypresstutorial #tutorial Cypress Automation Testing End to End Web ..."
+                  - tooltip "tooltip"
+                - generic [ref=e1486]:
+                  - generic [ref=e1487]:
+                    - generic [ref=e1491]: 10 chapters
+                    - button "Cypress Automation | Disable FETCH and XHR logs in cypress | Intellisense auto code completion in cypress | Assertions in Cypress | Selectors in Cypress | Xpath in Cypress | Run cypress test from VS code | Handle dropdwon in cypress | iframes in cypress | How to scroll down up in cypress" [ref=e1492]
+                  - button "More" [ref=e1497]:
+                    - generic [ref=e1501]:
+                      - img
+            - generic [ref=e1506] [cursor=pointer]:
+              - link [ref=e1507]:
+                - /url: /watch?v=7CYgItuHq5M&list=PLZMWkkQEwOPnxrxi544nL1vdC1noooXPx&pp=0gcJCWYDOCosWNin
+                - generic [ref=e1517]:
+                  - generic [ref=e1520]:
+                    - img
+                  - generic [ref=e1521]: 13 videos
+              - generic [ref=e1524]:
+                - heading "Cypress Automation Testing Tutorial For Beginners" [level=3] [ref=e1525]:
+                  - link "Cypress Automation Testing Tutorial For Beginners" [ref=e1526]:
+                    - /url: /watch?v=7CYgItuHq5M&list=PLZMWkkQEwOPnxrxi544nL1vdC1noooXPx&pp=0gcJCWYDOCosWNin
+                - generic [ref=e1528]:
+                  - group [ref=e1529]:
+                    - link "TestMu AI (Formerly LambdaTest)" [ref=e1532]:
+                      - /url: /@TestMuAI
+                    - generic [ref=e1533]: •
+                    - link "Playlist" [ref=e1536]:
+                      - /url: /@TestMuAI
+                  - group [ref=e1537]
+                  - group [ref=e1538]:
+                    - link "Introduction to Cypress Testing | Web Automation | Cypress Tutorial | Part 1 · 14:33" [ref=e1540]:
+                      - /url: /watch?v=7CYgItuHq5M&list=PLZMWkkQEwOPnxrxi544nL1vdC1noooXPx
+                  - group [ref=e1541]:
+                    - link "Is Cypress Easy to Learn? GET and FIND Command Hacks💻 | Cypress Tutorial | Part 2 · 20:31" [ref=e1543]:
+                      - /url: /watch?v=asFbGBf5SNc&list=PLZMWkkQEwOPnxrxi544nL1vdC1noooXPx
+                  - group [ref=e1544]
+                  - group [ref=e1545]:
+                    - link "View full playlist" [ref=e1548]:
+                      - /url: /playlist?list=PLZMWkkQEwOPnxrxi544nL1vdC1noooXPx
+            - generic [ref=e1550] [cursor=pointer]:
+              - link [ref=e1551]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFMDThO2rrMxRqFytoIVIFm
+                - generic [ref=e1561]:
+                  - generic [ref=e1564]:
+                    - img
+                  - generic [ref=e1565]: 41 videos
+              - generic [ref=e1568]:
+                - heading "Cypress Crash Course" [level=3] [ref=e1569]:
+                  - link "Cypress Crash Course" [ref=e1570]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFMDThO2rrMxRqFytoIVIFm
+                - generic [ref=e1572]:
+                  - group [ref=e1573]:
+                    - link "Testers Talk" [ref=e1576]:
+                      - /url: /@testerstalk
+                    - generic [ref=e1577]: •
+                    - link "Playlist" [ref=e1580]:
+                      - /url: /@testerstalk
+                  - group [ref=e1581]
+                  - group [ref=e1582]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e1584]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFMDThO2rrMxRqFytoIVIFm
+                  - group [ref=e1585]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e1587]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THFMDThO2rrMxRqFytoIVIFm
+                  - group [ref=e1588]
+                  - group [ref=e1589]:
+                    - link "View full playlist" [ref=e1592]:
+                      - /url: /playlist?list=PLUeDIlio4THFMDThO2rrMxRqFytoIVIFm
+            - generic [ref=e1594] [cursor=pointer]:
+              - link [ref=e1595]:
+                - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFUYVQEWObi6Qi_5xvCa4ID
+                - generic [ref=e1605]:
+                  - generic [ref=e1608]:
+                    - img
+                  - generic [ref=e1609]: 41 videos
+              - generic [ref=e1612]:
+                - heading "Cypress Tutorial Advanced" [level=3] [ref=e1613]:
+                  - link "Cypress Tutorial Advanced" [ref=e1614]:
+                    - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFUYVQEWObi6Qi_5xvCa4ID
+                - generic [ref=e1616]:
+                  - group [ref=e1617]:
+                    - link "Testers Talk" [ref=e1620]:
+                      - /url: /@testerstalk
+                    - generic [ref=e1621]: •
+                    - link "Playlist" [ref=e1624]:
+                      - /url: /@testerstalk
+                  - group [ref=e1625]
+                  - group [ref=e1626]:
+                    - link "Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs · 5:04:18" [ref=e1628]:
+                      - /url: /watch?v=oJV5whmzfZI&list=PLUeDIlio4THFUYVQEWObi6Qi_5xvCa4ID
+                  - group [ref=e1629]:
+                    - link "Cypress GitHub Repository E2E Testing · 0:43" [ref=e1631]:
+                      - /url: /watch?v=Eilrdx99t60&list=PLUeDIlio4THFUYVQEWObi6Qi_5xvCa4ID&pp=0gcJCQEBOCosWNin
+                  - group [ref=e1632]
+                  - group [ref=e1633]:
+                    - link "View full playlist" [ref=e1636]:
+                      - /url: /playlist?list=PLUeDIlio4THFUYVQEWObi6Qi_5xvCa4ID
+            - generic [ref=e1638]:
+              - link [ref=e1640] [cursor=pointer]:
+                - /url: /watch?v=mFGZN_o1WD0&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+              - generic [ref=e1642] [cursor=pointer]:
+                - generic [ref=e1643]:
+                  - generic [ref=e1644]:
+                    - heading "Cypress Full Course Overview E2E Web Testing 25 seconds" [level=3] [ref=e1645]:
+                      - link "Cypress Full Course Overview E2E Web Testing 25 seconds" [ref=e1646]:
+                        - /url: /watch?v=mFGZN_o1WD0&pp=ygUXQ3lwcmVzcyBieSBUZXN0ZXJzIFRhbGs%3D
+                        - text: Cypress Full Course Overview E2E Web Testing
+                    - button "Action menu" [ref=e1650]:
+                      - generic [ref=e1653]:
+                        - img
+                  - generic [ref=e1656]:
+                    - generic [ref=e1657]: 1.4K views
+                    - generic [ref=e1658]: •2 years ago
+                - generic [ref=e1659]:
+                  - link "Go to channel Testers Talk" [ref=e1660]:
+                    - /url: /@testerstalk
+                  - link "Testers Talk" [ref=e1665]:
+                    - /url: /@testerstalk
+                - generic [ref=e1666]:
+                  - generic [ref=e1667]: "Cypress Full Course Overview | Cypress Tutorial Full Course 2023 | Learn Cypress in 5 Hrs | #cypress #cypresstutorial #tutorial ..."
+                  - tooltip "tooltip"
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic "YouTube Video Player"
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import path from 'path';
+  3  | import { readExcelFile } from '../../src/utils/ExcelHelper';
+  4  | 
+  5  | const excelFilePath = path.join(__dirname, '../../test-data/qa/TestData.xlsx');
+  6  | 
+  7  | const records = readExcelFile(excelFilePath);
+  8  | 
+  9  | for (const record of records) {
+  10 | 
+  11 |     test(`Data driven testing using JSON in Playwright: ${record.Skill1}`, async ({ page }) => {
+  12 |         //await page.goto(`${process.env.YOUTUBE_URL}`);
+  13 |         await page.goto(process.env.YOUTUBE_URL as string)
+  14 | 
+  15 |         const acceptButton = page.locator('button:has-text("Accept all")').first();
+  16 |         if (await acceptButton.isVisible().catch(() => false)) {
+  17 |             await acceptButton.click();
+  18 |             await page.waitForLoadState('domcontentloaded');
+  19 |         }
+  20 | 
+  21 |         await page.getByPlaceholder('Search').first().click();
+  22 |         await page.getByPlaceholder('Search').first().fill(record.Skill1);
+  23 |         await page.getByRole('button', { name: 'Search', exact: true }).click();
+> 24 |         await page.getByText(record.Skill1 + ' ✅').first().click();
+     |                                                            ^ TimeoutError: locator.click: Timeout 30000ms exceeded.
+  25 |         await page.locator('video').first().click();
+  26 |         await expect(page.getByRole('link', { name: record.Skill1 + ' ✅' })).toBeVisible();
+  27 |     });
+  28 | 
+  29 | }
+  30 | 
+  31 | 
+  32 | 
+```
