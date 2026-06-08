@@ -35,7 +35,7 @@ export default defineConfig({
   stops the entire test run to 10*/
   maxFailures: 10,
   reporter: [
-    ['html', {open: 'never'}], // Prevents the HTML report from automatically opening which causes issues in CI environments. You can change 'never' to 'on-failure' if you want the report to open only when tests fail.
+    ['html', { open: 'never' }], // Prevents the HTML report from automatically opening which causes issues in CI environments. You can change 'never' to 'on-failure' if you want the report to open only when tests fail.
     //['dot'], 
     ['list'],
     ['json', { outputFile: 'playwright-report/test-results.json' }],
@@ -56,6 +56,9 @@ export default defineConfig({
     trace: 'on',
     locale: 'en-NG', // Set the locale to English (Nigeria)
     timezoneId: 'Africa/Lagos', // Set the timezone to Lagos, Nigeria
+    // launchOptions: {
+    //   args: ['--start-maximized'], // Start the browser maximized
+    // },
   },
 
   /* Configure projects for major browsers */
@@ -92,7 +95,11 @@ export default defineConfig({
     // },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+        //viewport: { width: 1920, height: 1080 }, // Set the viewport size to 1920x1080 for desktop testing
+      },
     },
   ],
 
