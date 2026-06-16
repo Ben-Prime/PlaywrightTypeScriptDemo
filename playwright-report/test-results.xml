@@ -1,0 +1,13 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.822566999999807">
+<testsuite name="Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts" timestamp="2026-06-11T15:33:04.882Z" hostname="Google Chrome" tests="1" failures="0" skipped="0" time="1.94" errors="0">
+<testcase name="Handling Alerts in Playwright" classname="Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts" time="1.94">
+<system-out>
+<![CDATA[Alert message is: Sample alert
+Dialog type is: alert
+
+[[ATTACHMENT|..\test-results\Test_Talk_Tutorial_Ch_4-al-7c2da-ndling-Alerts-in-Playwright-Google-Chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
