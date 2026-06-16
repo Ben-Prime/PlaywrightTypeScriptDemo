@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 test('Handling Alerts in Playwright', async ({ page }) => {
     await page.goto('https://www.selenium.dev/documentation/webdriver/interactions/alerts/');
 
+    //Listen for the 'dialog' event and handle the alert when it appears
     page.once('dialog', async dialog => {
         await dialog.accept(); // clicks on okay button
         console.log(`Alert message is: ${dialog.message()}`);

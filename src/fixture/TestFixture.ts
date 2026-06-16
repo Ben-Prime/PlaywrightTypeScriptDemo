@@ -2,7 +2,7 @@ import { test as base } from '@playwright/test';
 import { PlaylistPage } from '../pages/PlaylistPage';
 import { ResultPage } from '../pages/ResultPage';
 import { HomePage } from '../pages/HomePage';
-import { loadTestData } from '../utils/JSONHelper';
+import { loadTestData } from '../utils/JsonHelper';
 import { TestData } from '../interface/Module1TestData.interface';
 
 export const test = base.extend<{
