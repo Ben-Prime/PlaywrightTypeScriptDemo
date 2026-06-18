@@ -1,0 +1,3 @@
+Running test with TypeScript version: v24.13.0
+Test excecution started...
+Tests are running in qa env.

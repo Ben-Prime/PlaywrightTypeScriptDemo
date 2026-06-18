@@ -1,0 +1,137 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Test_Talk_Tutorial_Ch_3\visual_testing._test.spec.ts >> Page Visual Comparison in Playwright
+- Location: tests\Test_Talk_Tutorial_Ch_3\visual_testing._test.spec.ts:3:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  1132 pixels (ratio 0.01 of all image pixels) are different.
+
+  Snapshot: GitHubLoginPage.png
+
+Call log:
+  - Expect "toHaveScreenshot(GitHubLoginPage.png)" with timeout 30000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - 1132 pixels (ratio 0.01 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - 1132 pixels (ratio 0.01 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]
+  - main [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e14]:
+        - img [ref=e17]
+        - heading "Sign in to GitHub" [level=1] [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Username or email address
+            - textbox "Username or email address" [active] [ref=e25]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Password
+            - textbox "Password" [ref=e28]
+            - link "Forgot password?" [ref=e29] [cursor=pointer]:
+              - /url: /password_reset
+          - button "Sign in" [ref=e31] [cursor=pointer]
+        - generic [ref=e32]:
+          - generic [ref=e34]: or
+          - button "Continue with Google" [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]:
+              - generic:
+                - img:
+                  - img
+              - generic [ref=e38]: Continue with Google
+          - button "Continue with Apple" [ref=e40] [cursor=pointer]:
+            - generic [ref=e41]:
+              - generic:
+                - img:
+                  - img
+              - generic [ref=e42]: Continue with Apple
+      - generic [ref=e43]:
+        - paragraph [ref=e45]:
+          - text: New to GitHub?
+          - link "Create an account" [ref=e46] [cursor=pointer]:
+            - /url: /signup?source=login
+        - paragraph [ref=e48]:
+          - button "Sign in with a passkey" [ref=e49] [cursor=pointer]:
+            - generic [ref=e51]: Sign in with a passkey
+  - contentinfo [ref=e52]:
+    - list [ref=e53]:
+      - listitem [ref=e54]:
+        - link "Terms" [ref=e55] [cursor=pointer]:
+          - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+      - listitem [ref=e56]:
+        - link "Privacy" [ref=e57] [cursor=pointer]:
+          - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+      - listitem [ref=e58]:
+        - link "Docs" [ref=e59] [cursor=pointer]:
+          - /url: https://docs.github.com
+      - listitem [ref=e60]:
+        - link "Contact GitHub Support" [ref=e61] [cursor=pointer]:
+          - /url: https://support.github.com
+      - listitem [ref=e62]:
+        - button "Manage cookies" [ref=e64] [cursor=pointer]
+      - listitem [ref=e65]:
+        - button "Do not share my personal information" [ref=e67] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | import {test, expect}  from '@playwright/test';
+  2  | 
+  3  | test('Page Visual Comparison in Playwright', async ({ page }) => {
+  4  |     test.slow();
+  5  | 
+  6  |     await page.goto('https://github.com/login');
+  7  |     await page.waitForLoadState('domcontentloaded');
+  8  | 
+> 9  |     await expect(page).toHaveScreenshot('GitHubLoginPage.png', { fullPage: true });
+     |                        ^ Error: expect(page).toHaveScreenshot(expected) failed
+  10 |     await page.locator('#login_field').fill('testuser');
+  11 |     //await expect.soft(page).toHaveScreenshot('GitHubLoginPage.png', { fullPage: true }); // wil fail due to dynamic content, but test will continue
+  12 | });
+  13 | 
+  14 | test('Element Visual Comparison in Playwright', async ({ page }) => {
+  15 |     test.slow();
+  16 | 
+  17 |     await page.goto('https://github.com/login', {waitUntil: 'networkidle'});
+  18 | 
+  19 |     await expect(page).toHaveScreenshot('GitHubLoginPage.png', { fullPage: true });
+  20 |     
+  21 |     const element = page.locator('[class="authentication-body authentication-body--with-form new-session"]');
+  22 |     await expect(element).toHaveScreenshot('GitHubLoginForm.png');
+  23 | 
+  24 |     await page.locator('#login_field').fill('testuser');
+  25 |     //await expect.soft(element).toHaveScreenshot('GitHubLoginForm.png');
+  26 | });
+  27 | 
+  28 | 
+```

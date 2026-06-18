@@ -1,0 +1,12 @@
+January is visible in the dropdown
+February is visible in the dropdown
+March is visible in the dropdown
+April is visible in the dropdown
+May is visible in the dropdown
+June is visible in the dropdown
+July is visible in the dropdown
+August is visible in the dropdown
+September is visible in the dropdown
+October is visible in the dropdown
+November is visible in the dropdown
+December is visible in the dropdown
