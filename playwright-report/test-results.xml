@@ -1,11 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.822566999999807">
-<testsuite name="Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts" timestamp="2026-06-11T15:33:04.882Z" hostname="Google Chrome" tests="1" failures="0" skipped="0" time="1.94" errors="0">
-<testcase name="Handling Alerts in Playwright" classname="Test_Talk_Tutorial_Ch_4\alert_popups_test.spec.ts" time="1.94">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="7.093381000000052">
+<testsuite name="Test_Talk_Tutorial_Ch_2\assertions_test.spec.ts" timestamp="2026-11-04T17:29:46.268Z" hostname="Google Chrome" tests="1" failures="0" skipped="0" time="6.266" errors="0">
+<testcase name="Soft Assertions in playwright" classname="Test_Talk_Tutorial_Ch_2\assertions_test.spec.ts" time="6.266">
+<properties>
+<property name="slow" value="">
+</property>
+</properties>
 <system-out>
-<![CDATA[Alert message is: Sample alert
-Dialog type is: alert
-
-[[ATTACHMENT|..\test-results\Test_Talk_Tutorial_Ch_4-al-7c2da-ndling-Alerts-in-Playwright-Google-Chrome\test-finished-1.png]]
+<![CDATA[
+[[ATTACHMENT|..\test-results\Test_Talk_Tutorial_Ch_2-as-f7cb5-ft-Assertions-in-playwright-Google-Chrome\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>

@@ -33,7 +33,7 @@ test('Soft Assertions in playwright', async ({ page }) => {
 
   await page.goto('https://youtube.com/');
 
-  const acceptButton = page.getByRole('button', { name: 'Accept all' }).first();
+  const acceptButton = page.locator('button:has-text("Accept all")').first();
   if (await acceptButton.isVisible().catch(() => false)) {
     await acceptButton.click();
     await page.waitForLoadState('domcontentloaded');
